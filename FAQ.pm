@@ -2,7 +2,7 @@ package Parse::RecDescent::FAQ;
 
 use vars qw($VERSION);
 
-$VERSION = '6.0.e';
+$VERSION = '6.0.h';
 
 1;
 
@@ -61,6 +61,22 @@ take advantage of the follow variables:
 
 How do I match the line numbers with the actual contents of my
 script?
+
+=head3 Solution 1
+
+(from Holger Helmuth)
+
+"A possible solution is to put anything more complicated than a trivial
+statement into a subroutine outside of the parser. To call it you have
+to qualify it with the package name."
+
+Without this (maybe trivial?) method I probably would have given up on
+P:RD on my last project. Disadvantage is that the code is distributed
+into two locations and there should be a speed penality too, but it was
+definitely worth it.
+
+
+=head3 Solution 2
 
 At present, you can't (but that's on the ToDo list).
 Setting C<$::RD_TRACE> can be useful though:
@@ -321,9 +337,9 @@ If the 1st production of mysubrule has committed, then
 myrule should fail.  It doesn't seem to.  If this is
 not a bug, how do I get this behavior?
 
-=over 4
 
-=item * Answer by Damian
+
+=head3 Answer by Damian
 
 The optional nature of the reference to mysubrule(?)
 means that, when the subrule fails (whether committed or not)
@@ -350,7 +366,7 @@ or
 or whatever addition confirms that there really wasn't anything else
 after 'stuff'.
 
-=item * Now that you think you know the answer...
+=head3 Now that you think you know the answer...
 
 That answer is partially wrong, as was pointed out by Marcel Grunaer.
 In this phrase:
@@ -362,7 +378,7 @@ fails otherwise, presumably because of the negative lookahead:
 
   myrule: 'stuff' mysubrule(?) ...!ID { 1 }
 
-Marcel went on to point out an optimization:
+=head4 Marcel went on to point out an optimization:
 
 another option would be the use of a rulevar:
 
@@ -375,10 +391,6 @@ another option would be the use of a rulevar:
 this way you don't have to specify a potentially complex negative
 lookahead, and the method works over several levels of subrules
 as well.
-
-
-=back
-
 
 
 =head1 IGNORABLE TOKENS 
@@ -1511,6 +1523,17 @@ it occurred at.
 
 =head1 OTHER Parse::RecDescent QUESTIONS
 
+=head2 How to get the old perl.com article to work?
+
+Jethro of Perlmonks answers:
+
+L<http://perlmonks.org/?node_id=786132>
+
+
+The problem is that C<return()> finishes parsing.
+
+Parse::RecDescent works with a variable C<$return> to give back results from subrules to parent rules. If you change the three occurences of C<return> inside the grammar (but not inside the sub 'expression') to C<< $return= >> the parser works.
+
 
 =head2 Matching line continuation characters
 
@@ -1854,29 +1877,7 @@ something interesting that I can't explain to myself.
 
 Here is my script:
 
-
-use strict;
-use warnings;
-
-$::RD_TRACE = 1;
-
-use Parse::RecDescent;
-
-my $grammar = q{
-
-   input:  number(s) { $return = $item{ number } } | <error>
-
-   number: <skip: '\.*'> /\d+/ 
-
-};
-
-my $parser = new Parse::RecDescent($grammar);
-
-my $test_string = qq{1.2.3.5.8};
-
-print join( "\n", @{ $parser -> input( $test_string ) } );
-
-
+Program fragment delivered error ``couldnt open file : No such file or directory at ./tt.pl line 18, <F> line 332.''
 
 This script works great. However, if I change the value of the skip
 directive so that it uses double quotes instead of single quotes:
@@ -2704,6 +2705,10 @@ Conveniently available via NNTP at:
 =item * perlmonks.org
 
 =back
+
+=head1 FAQ repo
+
+L<http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master>
 
 
 

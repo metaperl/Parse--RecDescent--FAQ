@@ -2,7 +2,7 @@ package Parse::RecDescent::FAQ;
 
 use vars qw($VERSION);
 
-$VERSION = '6.0.g';
+$VERSION = '6.0.h';
 
 1;
 
@@ -323,9 +323,9 @@ If the 1st production of mysubrule has committed, then
 myrule should fail.  It doesn't seem to.  If this is
 not a bug, how do I get this behavior?
 
-=over 4
 
-=item * Answer by Damian
+
+=head3 Answer by Damian
 
 The optional nature of the reference to mysubrule(?)
 means that, when the subrule fails (whether committed or not)
@@ -352,7 +352,7 @@ or
 or whatever addition confirms that there really wasn't anything else
 after 'stuff'.
 
-=item * Now that you think you know the answer...
+=head3 Now that you think you know the answer...
 
 That answer is partially wrong, as was pointed out by Marcel Grunaer.
 In this phrase:
@@ -364,7 +364,7 @@ fails otherwise, presumably because of the negative lookahead:
 
   myrule: 'stuff' mysubrule(?) ...!ID { 1 }
 
-Marcel went on to point out an optimization:
+=head4 Marcel went on to point out an optimization:
 
 another option would be the use of a rulevar:
 
@@ -377,10 +377,6 @@ another option would be the use of a rulevar:
 this way you don't have to specify a potentially complex negative
 lookahead, and the method works over several levels of subrules
 as well.
-
-
-=back
-
 
 
 =head1 IGNORABLE TOKENS 

@@ -4,7 +4,7 @@
 <head>
 <title>Parse::RecDescent::FAQ - the official, authorized FAQ for Parse::RecDescent.</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:rurban@x-ray.at" />
+<link rev="made" href="mailto:root@localhost" />
 </head>
 
 <body style="background-color: white">
@@ -26,6 +26,12 @@
 
 		<li><a href="#flags_you_can_set">Flags you can set</a></li>
 		<li><a href="#making_warning_line_numbers_correspond_to_your_grammar">Making warning line numbers correspond to your grammar</a></li>
+		<ul>
+
+			<li><a href="#solution_1">Solution 1</a></li>
+			<li><a href="#solution_2">Solution 2</a></li>
+		</ul>
+
 	</ul>
 
 	<li><a href="#parser_behavior">PARSER BEHAVIOR</a></li>
@@ -57,6 +63,17 @@
 
 		<li><a href="#leftrecursion">Left-recursion</a></li>
 		<li><a href="#commit_in_subrule_which_is_optional_in_rule">Commit in subrule which is optional in rule</a></li>
+		<ul>
+
+			<li><a href="#answer_by_damian">Answer by Damian</a></li>
+			<li><a href="#now_that_you_think_you_know_the_answer___">Now that you think you know the answer...</a></li>
+			<ul>
+
+				<li><a href="#marcel_went_on_to_point_out_an_optimization_">Marcel went on to point out an optimization:</a></li>
+			</ul>
+
+		</ul>
+
 	</ul>
 
 	<li><a href="#ignorable_tokens">IGNORABLE TOKENS</a></li>
@@ -145,6 +162,7 @@
 	<li><a href="#other_parse__recdescent_questions">OTHER Parse::RecDescent QUESTIONS</a></li>
 	<ul>
 
+		<li><a href="#how_to_get_the_old_perl_com_article_to_work">How to get the old perl.com article to work?</a></li>
 		<li><a href="#matching_line_continuation_characters">Matching line continuation characters</a></li>
 		<li><a href="#how_can_i_match_parenthetical_expressions_to_arbitrary_depth">How can I match parenthetical expressions to arbitrary depth?</a></li>
 		<li><a href="#switching_out_of_firstmatchwins_mode">Switching out of first-match-wins mode</a></li>
@@ -251,6 +269,7 @@
 		<li><a href="#sources_for_faq_material">Sources for FAQ Material</a></li>
 	</ul>
 
+	<li><a href="#faq_repo">FAQ repo</a></li>
 </ul>
 <!-- INDEX END -->
 
@@ -311,6 +330,20 @@ take advantage of the follow variables:</p>
 <h2><a name="making_warning_line_numbers_correspond_to_your_grammar">Making warning line numbers correspond to your grammar</a></h2>
 <p>How do I match the line numbers with the actual contents of my
 script?</p>
+<p>
+</p>
+<h3><a name="solution_1">Solution 1</a></h3>
+<p>(from Holger Helmuth)</p>
+<p>``A possible solution is to put anything more complicated than a trivial
+statement into a subroutine outside of the parser. To call it you have
+to qualify it with the package name.''</p>
+<p>Without this (maybe trivial?) method I probably would have given up on
+P:RD on my last project. Disadvantage is that the code is distributed
+into two locations and there should be a speed penality too, but it was
+definitely worth it.</p>
+<p>
+</p>
+<h3><a name="solution_2">Solution 2</a></h3>
 <p>At present, you can't (but that's on the ToDo list).
 Setting <code>$::RD_TRACE</code> can be useful though:</p>
 <p>Once you've run with <code>$RD_TRACE</code>, do this:</p>
@@ -525,9 +558,9 @@ not seem to work.</p>
 <p>If the 1st production of mysubrule has committed, then
 myrule should fail.  It doesn't seem to.  If this is
 not a bug, how do I get this behavior?</p>
-<ul>
-<li><strong><a name="item_answer_by_damian">Answer by Damian</a></strong>
-
+<p>
+</p>
+<h3><a name="answer_by_damian">Answer by Damian</a></h3>
 <p>The optional nature of the reference to <code>mysubrule(?)</code>
 means that, when the subrule fails (whether committed or not)
 the failure doesn't matter, since myrule can match if it
@@ -547,9 +580,9 @@ by ``anchoring'' the end of the match. That might be:</p>
            | &lt;error?&gt; &lt;reject&gt;</pre>
 <p>or whatever addition confirms that there really wasn't anything else
 after 'stuff'.</p>
-</li>
-<li><strong><a name="item_now_that_you_think_you_know_the_answer_2e_2e_2e">Now that you think you know the answer...</a></strong>
-
+<p>
+</p>
+<h3><a name="now_that_you_think_you_know_the_answer___">Now that you think you know the answer...</a></h3>
 <p>That answer is partially wrong, as was pointed out by Marcel Grunaer.
 In this phrase:</p>
 <pre>
@@ -558,7 +591,9 @@ In this phrase:</p>
 fails otherwise, presumably because of the negative lookahead:</p>
 <pre>
   myrule: 'stuff' mysubrule(?) ...!ID { 1 }</pre>
-<p>Marcel went on to point out an optimization:</p>
+<p>
+</p>
+<h4><a name="marcel_went_on_to_point_out_an_optimization_">Marcel went on to point out an optimization:</a></h4>
 <p>another option would be the use of a rulevar:</p>
 <pre>
   myrule : &lt;rulevar: local $failed&gt;
@@ -569,8 +604,6 @@ fails otherwise, presumably because of the negative lookahead:</p>
 <p>this way you don't have to specify a potentially complex negative
 lookahead, and the method works over several levels of subrules
 as well.</p>
-</li>
-</ul>
 <p>
 </p>
 <hr />
@@ -608,7 +641,7 @@ looks like this:</p>
  [NEXTSECTION]
  other parameter=other value</pre>
 <ul>
-<li><strong>Answer by Damian</strong>
+<li><strong><a name="item_answer_by_damian">Answer by Damian</a></strong>
 
 <pre>
        q{
@@ -1566,6 +1599,13 @@ it occurred at.</p>
 <h1><a name="other_parse__recdescent_questions">OTHER Parse::RecDescent QUESTIONS</a></h1>
 <p>
 </p>
+<h2><a name="how_to_get_the_old_perl_com_article_to_work">How to get the old perl.com article to work?</a></h2>
+<p>Jethro of Perlmonks answers:</p>
+<p><a href="http://perlmonks.org/?node_id=786132">http://perlmonks.org/</a></p>
+<p>The problem is that <code>return()</code> finishes parsing.</p>
+<p>Parse::RecDescent works with a variable <code>$return</code> to give back results from subrules to parent rules. If you change the three occurences of <code>return</code> inside the grammar (but not inside the sub 'expression') to <code>$return=</code> the parser works.</p>
+<p>
+</p>
 <h2><a name="matching_line_continuation_characters">Matching line continuation characters</a></h2>
 <p>I need to parse a grammar that includes line continuation
 characters.  For example:</p>
@@ -1857,22 +1897,7 @@ Check out this link:</p>
 <p>I'm playing around with the &lt;skip:&gt; directive and I've noticed
 something interesting that I can't explain to myself.</p>
 <p>Here is my script:</p>
-<pre>
-
-use strict;
-use warnings;</pre>
-<p>$::RD_TRACE = 1;</p>
-<p>use Parse::RecDescent;</p>
-<p>my $grammar = q{</p>
-<pre>
-   input:  number(s) { $return = $item{ number } } | &lt;error&gt;</pre>
-<pre>
-   number: &lt;skip: '\.*'&gt; /\d+/</pre>
-<p>};</p>
-<p>my $parser = new Parse::RecDescent($grammar);</p>
-<p>my $test_string = qq{1.2.3.5.8};</p>
-<p>print join( ``\n'', @{ $parser -&gt; input( $test_string ) } );</p>
-<p></p>
+<p>Program fragment delivered error ``couldnt open file : No such file or directory at ./tt.pl line 18, &lt;F&gt; line 332.''</p>
 <p>This script works great. However, if I change the value of the skip
 directive so that it uses double quotes instead of single quotes:</p>
 <pre>
@@ -2603,13 +2628,18 @@ appreciate knowing about it.</p>
 
 <p>Conveniently available via NNTP at:</p>
 <pre>
-     <a href="news://nntp.perl.org/perl.recdescent">news://nntp.perl.org/perl.recdescent</a>
-
-</pre>
+     <a href="news://nntp.perl.org/perl.recdescent">news://nntp.perl.org/perl.recdescent</a></pre>
 </li>
 <li><strong><a name="item_perlmonks_2eorg">perlmonks.org</a></strong>
 
 </ul>
+<p>
+</p>
+<hr />
+<h1><a name="faq_repo">FAQ repo</a></h1>
+<p><a href="http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master">http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master</a>
+
+</p>
 
 </body>
 

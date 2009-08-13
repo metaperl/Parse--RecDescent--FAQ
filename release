@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/bash -x
 
 echo
 echo Changes should be made to FAQ.tt *not* FAQ.pm
@@ -20,5 +20,7 @@ rm *.tar.gz
 make tardist
 
 
-hg commit -m "`grep 'VERSION =' FAQ.tt`"
-hg push
+git commit -a -m "`grep 'VERSION =' FAQ.tt`"
+git push
+
+upc *.tar.gz
