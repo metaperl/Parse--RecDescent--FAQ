@@ -2,7 +2,7 @@ package Parse::RecDescent::FAQ;
 
 use vars qw($VERSION);
 
-$VERSION = '6.0.h';
+$VERSION = '6.0.i';
 
 1;
 
@@ -52,9 +52,9 @@ script?
 
 (from Holger Helmuth)
 
-"A possible solution is to put anything more complicated than a trivial
+A possible solution is to put anything more complicated than a trivial
 statement into a subroutine outside of the parser. To call it you have
-to qualify it with the package name."
+to qualify it with the package name.
 
 Without this (maybe trivial?) method I probably would have given up on
 P:RD on my last project. Disadvantage is that the code is distributed
@@ -2018,11 +2018,11 @@ have used Lex and Yacc. Parse::RecDescent is a top-down parser.
 
 =head3 Parse::Earley
 
-L<search.cpan.org/dist/Parse-Earley>
+L<Parse::Earley>
 
 =head3 Perl6::Rules
 
-L<search.cpan.org/dist/Perl6-Rules>
+L<Perl6::Rules>
 
 =head3 perl-byacc
 
@@ -2046,7 +2046,7 @@ prd.
 The author of Parse::RecDescent is Damian Conway. 
 
 The author of Parse::RecDescent::FAQ is Terrence Brannon <tbone@cpan.org>. 
-L<http://www.metaperl.com>
+L<http://www.metaperl.org>
 
 The (unwitting) contributors to this FAQ
 
