@@ -1,3 +1,8 @@
+2009-08-13    <tbrannon@devel.cybertechnologyllc.com>
+
+	* added Holger Helmuth's suggestion on how to make line numbers
+	correspond to the grammar
+
 2007-11-08  Terrence Brannon  <W049945@LNOHPOL8170MC1.NAEAST.AD.JPMORGANCHASE.COM>
 
 	* FAQ.tt: added a link to Ted Zlatnov's solution on how to get 
