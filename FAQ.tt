@@ -2114,15 +2114,13 @@ appreciate knowing about it.
 
 =item * recdescent@perl.org
 
-Conveniently available via NNTP at:
-
-     news://nntp.perl.org/perl.recdescent
+L<http://lists.perl.org/list/recdescent.html>
 
 =item * perlmonks.org
 
 =back
 
-=head1 FAQ repo
+=head1 Source Repository for this FAQ
 
 L<http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master>
 
