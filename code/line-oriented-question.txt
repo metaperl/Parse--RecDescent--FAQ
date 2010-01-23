@@ -1,11 +1,17 @@
-I want to use Parse::RecDescent to parse a certain assembly language. In assembly, data is "line oriented", that is newline is the statement separator. Simplified demonstration:
+I want to use Parse::RecDescent to parse a certain assembly
+language. In assembly, data is "line oriented", that is newline is the
+statement separator. Simplified demonstration: 
 
 command1 arg1 \n
 command2 arg2 \n
 
-Defines two statements. More than one statement on a line is illegal, a statement broken to two lines is also illegal.
+Defines two statements. More than one statement on a line is illegal,
+a statement broken to two lines is also illegal. 
 
-Now, P::RD has an issue with newlines. It swallows them by default. There is a workaround using the "skip" directive, but it became tedious and my grammar code is full of <skip: qr/ \t*/> directives.
+Now, P::RD has an issue with newlines. It swallows them by
+default. There is a workaround using the "skip" directive, but it
+became tedious and my grammar code is full of <skip: qr/ \t*/>
+directives. 
 
 Is there an easier way ?
 

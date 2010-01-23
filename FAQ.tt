@@ -2,7 +2,7 @@ package Parse::RecDescent::FAQ;
 
 use vars qw($VERSION);
 
-$VERSION = '6.0.i';
+$VERSION = '6.0.j';
 
 1;
 
@@ -17,15 +17,40 @@ Parse::RecDescent::FAQ - the official, authorized FAQ for Parse::RecDescent.
 
 =head2 Is Parse::RecDescent LL(1)? LL(N)? LR(1)? LR(N)?
 
+The best answer to this question is this thread:
+L<http://www.mail-archive.com/recdescent@perl.org/msg00143.html>
+
+Bu also see the "Left-recursion" section under L<"PARSER BEHAVIOR">
+
+<tt>pod_include 'code/incremental-data-structure.question'</tt>
+
 =over 4
 
 =item Answer by Yves Orton:
 
-<tt>pod_include 'code/incremental-data-structure.question'</tt>
+<tt>pod_include 'code/incremental-data-structure.answer'</tt>
 
 =back
 
-Also see the "Left-recursion" section under L<"PARSER BEHAVIOR">
+=head1 GOTCHAS!
+
+=head2 all I did was add an action!
+
+It may seem like a trivial thing to add a print action to the end of a rule, but that can 
+cause problems.
+
+From L<http://www.perlmonks.org/index.pl?node_id=818549> we read:
+
+<tt>pod_code 'insert/gotcha/add_action/question.txt'</tt>
+
+=over 4
+
+=item Answer by ikegami
+
+<tt>pod_include 'insert/gotcha/add_action/question.txt'</tt>
+
+=cut
+
 
 =head1 DEBUGGING
 
@@ -36,7 +61,7 @@ Also see the "Left-recursion" section under L<"PARSER BEHAVIOR">
 Paraphrased from Yves Orton:
 
 To understand more about why your parser is not behaving as it should
-take advantage of the follow variables:
+take advantage of the following variables:
 
    $::RD_ERRORS       # unless undefined, report fatal errors
    $::RD_WARN         # unless undefined, also report non-fatal problems
@@ -610,14 +635,14 @@ So if you would like to state the test in the positive, then do this:
 =head1 Parsing Quotes within .... Quotes!
 
 A recent node on Perlmonks 
-L<http://perlmonks.org/?node_id=665986|http://perlmonks.org/?node_id=665986>
+L<http://perlmonks.org/?node_id=665986>
 had a question on how to parse:
 
     A statement "with a quoted ';'" ;
 
 The best answer is the C<perl_quotelike> section in the offical docs for
-L<Parse::RecDescent|Parse::RecDescent>. An earlir node on Perlmonks:
-L<http://perlmonks.org/?node_id=485933|http://perlmonks.org/?node_id=485933> 
+L<Parse::RecDescent|Parse::RecDescent>. An earlier node on Perlmonks:
+L<http://perlmonks.org/?node_id=485933> 
 covers the use of C<perl_quotelike> in detail.
 
 

@@ -9,13 +9,15 @@
 
 <body style="background-color: white">
 
-<p><a name="__index__"></a></p>
+
 <!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
 
 <ul>
 
 	<li><a href="#name">NAME</a></li>
-	<li><a href="#overviewtype_questions">OVERVIEW-TYPE QUESTIONS</a></li>
+	<li><a href="#overview_type_questions">OVERVIEW-TYPE QUESTIONS</a></li>
 	<ul>
 
 		<li><a href="#is_parse__recdescent_ll_1__ll_n__lr_1__lr_n_">Is Parse::RecDescent LL(1)? LL(N)? LR(1)? LR(N)?</a></li>
@@ -37,7 +39,7 @@
 	<li><a href="#parser_behavior">PARSER BEHAVIOR</a></li>
 	<ul>
 
-		<li><a href="#insuring_a_toplevel_rule_match">Insuring a top-level rule match</a></li>
+		<li><a href="#insuring_a_top_level_rule_match">Insuring a top-level rule match</a></li>
 		<ul>
 
 			<li><a href="#answer_by_randal_l__schwartz">Answer by Randal L. Schwartz</a></li>
@@ -61,7 +63,7 @@
 
 		</ul>
 
-		<li><a href="#leftrecursion">Left-recursion</a></li>
+		<li><a href="#left_recursion">Left-recursion</a></li>
 		<li><a href="#commit_in_subrule_which_is_optional_in_rule">Commit in subrule which is optional in rule</a></li>
 		<ul>
 
@@ -89,12 +91,12 @@
 		<li><a href="#as_end_of_line">As end of line</a></li>
 		<ul>
 
-			<li><a href="#example_in_a_linedelimited_grammar">Example In a line-delimited grammar</a></li>
+			<li><a href="#example_in_a_line_delimited_grammar">Example In a line-delimited grammar</a></li>
 		</ul>
 
 	</ul>
 
-	<li><a href="#columnoriented_processing">COLUMN-ORIENTED PROCESSING</a></li>
+	<li><a href="#column_oriented_processing">COLUMN-ORIENTED PROCESSING</a></li>
 	<ul>
 
 		<li><a href="#whitespace__text__column_n__period__number__some_reference_to_lookahead_">Whitespace, text, column N, period, number (some reference to lookahead)</a></li>
@@ -106,7 +108,7 @@
 	<ul>
 
 		<li><a href="#subrule_matches_n_times__where_n_is_parsed_on_the_fly">Subrule matches N times, where N is parsed on the fly</a></li>
-		<li><a href="#rulebuilding_by_interpolating_an_array_of_choices">Rule-building by interpolating an array of choices</a></li>
+		<li><a href="#rule_building_by_interpolating_an_array_of_choices">Rule-building by interpolating an array of choices</a></li>
 		<li><a href="#macro_processing">Macro processing</a></li>
 		<li><a href="#cloning_parsers_but_giving_each_parser_it_own_package">Cloning parsers but giving each parser it own package</a></li>
 		<li><a href="#parsing_sentences_to_generate_sentences">Parsing sentences to generate sentences</a></li>
@@ -133,7 +135,7 @@
 	<li><a href="#capturing_matches">CAPTURING MATCHES</a></li>
 	<ul>
 
-		<li><a href="#hey__i_m_getting_back_array_0x355300__instead_of_what_i_set__return_to_">Hey! I'm getting back <code>ARRAY(0x355300)</code> instead of what I set $return to!</a></li>
+		<li><a href="#hey__i_m_getting_back_array_0x355300__instead_of_what_i_set__return_to_">Hey! I'm getting back ARRAY(0x355300) instead of what I set $return to!</a></li>
 		<li><a href="#getting_text_from_subrule_matches">Getting text from subrule matches</a></li>
 		<li><a href="#capturing_whitespace_between_tokens">Capturing whitespace between tokens</a></li>
 		<li><a href="#my_grammar_is_not_returning_any_data_">My grammar is not returning any data!</a></li>
@@ -153,7 +155,7 @@
 	<ul>
 
 		<li><a href="#propagating_a_failure_up_after_a__commit__on_a_subrule">Propagating a failure up after a &lt;commit&gt; on a subrule</a></li>
-		<li><a href="#in_a_nonshell__e_g__cgi__environment">In a non-shell (e.g. CGI) environment</a></li>
+		<li><a href="#in_a_non_shell__e_g__cgi__environment">In a non-shell (e.g. CGI) environment</a></li>
 		<li><a href="#accessing_error_data">Accessing error data</a></li>
 		<li><a href="#simple_error_handling">Simple Error Handling</a></li>
 		<li><a href="#collecting_all_error_messages_for_processing">Collecting all error messages for processing</a></li>
@@ -165,8 +167,8 @@
 		<li><a href="#how_to_get_the_old_perl_com_article_to_work">How to get the old perl.com article to work?</a></li>
 		<li><a href="#matching_line_continuation_characters">Matching line continuation characters</a></li>
 		<li><a href="#how_can_i_match_parenthetical_expressions_to_arbitrary_depth">How can I match parenthetical expressions to arbitrary depth?</a></li>
-		<li><a href="#switching_out_of_firstmatchwins_mode">Switching out of first-match-wins mode</a></li>
-		<li><a href="#i_m_having_problems_with_the_intertoken_separator_">I'm having problems with the inter-token separator:</a></li>
+		<li><a href="#switching_out_of_first_match_wins_mode">Switching out of first-match-wins mode</a></li>
+		<li><a href="#i_m_having_problems_with_the_inter_token_separator_">I'm having problems with the inter-token separator:</a></li>
 		<li><a href="#matching_blank_lines">Matching blank lines</a></li>
 		<li><a href="#how_can_i_get_at_the_text_remaining_to_be_parsed">How can I get at the text remaining to be parsed?</a></li>
 		<li><a href="#you_don_t_escape_perl_symbols_in_your_grammars__why_did_i_have_to">You don't escape Perl symbols in your grammars. Why did I have to?</a></li>
@@ -177,7 +179,7 @@
 	<ul>
 
 		<li><a href="#getting_large_files_into_memory">Getting large files into memory</a></li>
-		<li><a href="#double_vs_singlequoted_strings">Double vs Single-quoted strings</a></li>
+		<li><a href="#double_vs_single_quoted_strings">Double vs Single-quoted strings</a></li>
 		<li><a href="#tracking_text_parsed_between_phases_of_the_parse">Tracking text parsed between phases of the parse</a></li>
 		<li><a href="#unconditionally_listifying_scalars">Unconditionally listifying scalars</a></li>
 		<li><a href="#shallow_versus_deep_copying">Shallow versus Deep Copying</a></li>
@@ -194,7 +196,7 @@
 			<li><a href="#shortest_match_instead_of_longest_match">Shortest match instead of longest match</a></li>
 			<li><a href="#tutorial_on_positive_and_negative_lookahead_and_lookbehind">Tutorial on positive and negative lookahead and lookbehind</a></li>
 			<li><a href="#japhy_s_book_on_regular_expressions">Japhy's Book on Regular Expressions</a></li>
-			<li><a href="#mastering_regular_expressions_by_jeffrey_freidl">``Mastering Regular Expressions'' by Jeffrey Freidl</a></li>
+			<li><a href="#mastering_regular_expressions_by_jeffrey_freidl">&quot;Mastering Regular Expressions&quot; by Jeffrey Freidl</a></li>
 		</ul>
 
 	</ul>
@@ -206,7 +208,7 @@
 		<li><a href="#web_links">Web Links</a></li>
 		<ul>
 
-			<li><a href="#some_parse__recdescent_tutorials">``Some Parse::RecDescent Tutorials''</a></li>
+			<li><a href="#some_parse__recdescent_tutorials">&quot;Some Parse::RecDescent Tutorials&quot;</a></li>
 			<li><a href="#craig_s_parse__recdescent_area">Craig's Parse::Recdescent Area</a></li>
 			<li><a href="#parse__recdescent_tutorial_at_www_perl_com">Parse::Recdescent tutorial at www.perl.com</a></li>
 		</ul>
@@ -215,9 +217,9 @@
 		<ul>
 
 			<li><a href="#parse_data__dumper_output">Parse Data::Dumper output</a></li>
-			<li><a href="#parsing_interesting_things">``Parsing Interesting Things''</a></li>
-			<li><a href="#data_munging_with_perl_by_dave_cross">``Data Munging with Perl'' by Dave Cross</a></li>
-			<li><a href="#objectoriented_perl_by_damian_conway">``Object-Oriented Perl'' by Damian Conway</a></li>
+			<li><a href="#parsing_interesting_things">&quot;Parsing Interesting Things&quot;</a></li>
+			<li><a href="#data_munging_with_perl_by_dave_cross">&quot;Data Munging with Perl&quot; by Dave Cross</a></li>
+			<li><a href="#object_oriented_perl_by_damian_conway">&quot;Object-Oriented Perl&quot; by Damian Conway</a></li>
 		</ul>
 
 		<li><a href="#cpan_modules_of_wonderful_utility_">CPAN Modules of Wonderful Utility!</a></li>
@@ -235,7 +237,7 @@
 		<li><a href="#practical_parser_examples">Practical Parser Examples</a></li>
 		<ul>
 
-			<li><a href="#dbfeeder___data__generate__database_test_data_generation_tool">DBFeeder / Data::Generate - database test data generation tool</a></li>
+			<li><a href="#dbfeeder___data__generate___database_test_data_generation_tool">DBFeeder / Data::Generate - database test data generation tool</a></li>
 			<ul>
 
 				<li><a href="#tangential_new_directions">Tangential new directions</a></li>
@@ -243,7 +245,7 @@
 
 			<li><a href="#article_comparing_gene_parsing_with_prd_and_other_approaches">Article comparing Gene Parsing with PRD and other approaches</a></li>
 			<li><a href="#module_dependency_expression_parser">Module dependency expression parser</a></li>
-			<li><a href="#xsh__the_xml_editing_shell">XSH - The XML Editing Shell</a></li>
+			<li><a href="#xsh___the_xml_editing_shell">XSH - The XML Editing Shell</a></li>
 			<li><a href="#parsing_symbolic_expressions___boolean_logic">Parsing Symbolic Expressions / Boolean Logic</a></li>
 			<li><a href="#mysql_to_oracle_schema_conversion_utility">MySql to Oracle schema conversion utility</a></li>
 		</ul>
@@ -255,8 +257,8 @@
 			<li><a href="#parse__yapp">Parse::YAPP</a></li>
 			<li><a href="#parse__earley">Parse::Earley</a></li>
 			<li><a href="#perl6__rules">Perl6::Rules</a></li>
-			<li><a href="#perlbyacc">perl-byacc</a></li>
-			<li><a href="#domainspecific_parsers">Domain-specific parsers</a></li>
+			<li><a href="#perl_byacc">perl-byacc</a></li>
+			<li><a href="#domain_specific_parsers">Domain-specific parsers</a></li>
 		</ul>
 
 		<li><a href="#a_vim_syntax_file_for_parse__recdescent">a VIM Syntax File for Parse::RecDescent</a></li>
@@ -271,9 +273,11 @@
 
 	<li><a href="#faq_repo">FAQ repo</a></li>
 </ul>
+
+<hr name="index" />
+</div>
 <!-- INDEX END -->
 
-<hr />
 <p>
 </p>
 <h1><a name="name">NAME</a></h1>
@@ -281,34 +285,27 @@
 <p>
 </p>
 <hr />
-<h1><a name="overviewtype_questions">OVERVIEW-TYPE QUESTIONS</a></h1>
+<h1><a name="overview_type_questions">OVERVIEW-TYPE QUESTIONS</a></h1>
 <p>
 </p>
 <h2><a name="is_parse__recdescent_ll_1__ll_n__lr_1__lr_n_">Is Parse::RecDescent LL(1)? LL(N)? LR(1)? LR(N)?</a></h2>
 <dl>
-<dt><strong><a name="item_answer_by_yves_orton_3a">Answer by Yves Orton:</a></strong>
+<dt><strong><a name="answer_by_yves_orton" class="item">Answer by Yves Orton:</a></strong></dt>
 
 <dd>
 <p>I have a data structure which is</p>
-</dd>
-<dd>
 <p>a hash of entries
 where
 an entry is a list/array of sets</p>
-</dd>
-<dd>
 <p>I have also a grammar that can parse the syntax of the text files that
 contain the data I want to fill this structure with. Until here
 everything is ok.</p>
-</dd>
-<dd>
 <p>Problem: I cannot figure out how to actually FILL the parsed data into
 the structure. I can only decide if a string is grammatically correct
 or not.</p>
 </dd>
-</li>
 </dl>
-<p>Also see the ``Left-recursion'' section under <a href="#parser_behavior">PARSER BEHAVIOR</a></p>
+<p>Also see the &quot;Left-recursion&quot; section under <a href="#parser_behavior">PARSER BEHAVIOR</a></p>
 <p>
 </p>
 <hr />
@@ -361,7 +358,7 @@ name of the offending rule).</p>
 <h1><a name="parser_behavior">PARSER BEHAVIOR</a></h1>
 <p>
 </p>
-<h2><a name="insuring_a_toplevel_rule_match">Insuring a top-level rule match</a></h2>
+<h2><a name="insuring_a_top_level_rule_match">Insuring a top-level rule match</a></h2>
 <p>I have a question regarding subrules within grammars used with
 Parse::RecDescent - The following code best illustrates the best test
 case that I can identify which highlights my problem.</p>
@@ -392,7 +389,7 @@ top-level pattern.</p>
 in the input string, not necessarily right from the start.</p>
 <p>In this post:</p>
 <p><a href="http://www.mail-archive.com/recdescent@perl.org/msg00499.html">http://www.mail-archive.com/recdescent@perl.org/msg00499.html</a></p>
-<p>titled ``Re: floating / backtracking - style match'', Ted Zlatnov 
+<p>titled &quot;Re: floating / backtracking - style match&quot;, Ted Zlatnov 
 provides an elegant solution to getting the job done.</p>
 <p>
 </p>
@@ -414,7 +411,7 @@ provides an elegant solution to getting the job done.</p>
  my $text    = 'aa';
  
  print defined($parser-&gt;startrule($text)) ? &quot;Good!\n&quot; : &quot;Bad!\n&quot;;</pre>
-<p>It *will* print ``Bad'', meaning that PRD did not match it.</p>
+<p>It *will* print &quot;Bad&quot;, meaning that PRD did not match it.</p>
 <p>The reason is that the first branch of the alternation matched, then the next subrule failed.</p>
 <p>You may ask: is there any way to persuade a top-down parser like P::RD
 to accept the above text as valid? I know that, in this simple
@@ -516,21 +513,22 @@ Try:</p>
 <p>which is a literal dot.</p>
 <p>
 </p>
-<h2><a name="leftrecursion">Left-recursion</a></h2>
+<h2><a name="left_recursion">Left-recursion</a></h2>
 <ul>
-<li><strong><a name="item_on_elimination_of_left_2drecursion_randal_schwartz">On elimination of left-recursion Randal Schwartz states:</a></strong>
+<li><strong><a name="on_elimination_of_left_recursion_randal_schwartz_states" class="item">On elimination of left-recursion Randal Schwartz states:</a></strong>
 
 <p>I had a fun time eliminating a mutual left-recursion problem for
-my ``Data-Undumper'' program, which used P::RD as an essential component.
+my &quot;Data-Undumper&quot; program, which used P::RD as an essential component.
 See my discussion of such at</p>
 <pre>
  <a href="http://www.stonehenge.com/merlyn/LinuxMag/col29.html">http://www.stonehenge.com/merlyn/LinuxMag/col29.html</a></pre>
 </li>
-<li><strong><a name="item_also_2c_regarding_elimination_see_this_perlmonks_n">Also, regarding elimination see this Perlmonks node:</a></strong>
+<li><strong><a name="also_regarding_elimination_see_this_perlmonks_node" class="item">Also, regarding elimination see this Perlmonks node:</a></strong>
 
 <pre>
  <a href="http://www.perlmonks.org/index.pl?lastnode_id=6364&amp;node_id=153155">http://www.perlmonks.org/index.pl?lastnode_id=6364&amp;node_id=153155</a></pre>
-<li><strong><a name="item_regarding_detection_of_left_2drecursion_2c_conway_">Regarding detection of left-recursion, Conway states:</a></strong>
+</li>
+<li><strong><a name="regarding_detection_of_left_recursion_conway_states" class="item">Regarding detection of left-recursion, Conway states:</a></strong>
 
 <p>RecDescent does a complete graph traversal looking for n-ary
 left-recursion loops and fails to compile the grammar if it finds any
@@ -541,8 +539,8 @@ earliest versions.</p>
 <p>
 </p>
 <h2><a name="commit_in_subrule_which_is_optional_in_rule">Commit in subrule which is optional in rule</a></h2>
-<p>Ques: When a subrule in a rule that has a ``zero or
-more'' repetition specifier (ie. ? or s?) has a
+<p>Ques: When a subrule in a rule that has a &quot;zero or
+more&quot; repetition specifier (ie. ? or s?) has a
 &lt;commit&gt; directive in its production followed by the
 conditional &lt;error?&gt; &lt;reject&gt; production, if that
 subrule's production becomes committed, does that
@@ -561,12 +559,12 @@ not a bug, how do I get this behavior?</p>
 <p>
 </p>
 <h3><a name="answer_by_damian">Answer by Damian</a></h3>
-<p>The optional nature of the reference to <code>mysubrule(?)</code>
+<p>The optional nature of the reference to mysubrule(?)
 means that, when the subrule fails (whether committed or not)
 the failure doesn't matter, since myrule can match if it
 finds zero mysubrules, which it just did.</p>
 <p>The usual way to get the rule-of-the-subrule to fail upon subrule failure is
-by ``anchoring'' the end of the match. That might be:</p>
+by &quot;anchoring&quot; the end of the match. That might be:</p>
 <pre>
   myrule: 'stuff' mysubrule(?) ...!ID</pre>
 <pre>
@@ -614,7 +612,7 @@ as well.</p>
 <p>Since there is no separate lexer in recdescent. And it is top down. Is
 there anyway to deal w/ removing C comments that could be anywhere.</p>
 <ul>
-<li><strong><a name="item_answer_by_conway">Answer by Conway</a></strong>
+<li><strong><a name="answer_by_conway" class="item">Answer by Conway</a></strong>
 
 <p>Sure. Treat them as whitespace!</p>
 <p>Do something like this:</p>
@@ -641,7 +639,7 @@ looks like this:</p>
  [NEXTSECTION]
  other parameter=other value</pre>
 <ul>
-<li><strong><a name="item_answer_by_damian">Answer by Damian</a></strong>
+<li><strong><a name="answer_by_damian" class="item">Answer by Damian</a></strong>
 
 <pre>
        q{
@@ -664,25 +662,28 @@ looks like this:</p>
                 value:
                           /.*\n/
         }</pre>
-<li><strong><a name="item_another_answer">Another Answer</a></strong>
+</li>
+<li><strong><a name="another_answer" class="item">Another Answer</a></strong>
 
-<p>Also take a look at the example in section 11.2 in ``Data Munging with Perl''
+<p>Also take a look at the example in section 11.2 in &quot;Data Munging with Perl&quot;
 by Dave Cross.</p>
 </li>
-<li><strong><a name="item_and_the_newest_answer_by_the_tireless_randal_l_2e_">And the newest answer by the tireless Randal L. Schwartz:</a></strong>
+<li><strong><a name="and_the_newest_answer_by_the_tireless_randal_l_schwartz" class="item">And the newest answer by the tireless Randal L. Schwartz:</a></strong>
 
 <pre>
   L&lt;<a href="http://www.stonehenge.com/merlyn/UnixReview/col40.html&gt">http://www.stonehenge.com/merlyn/UnixReview/col40.html&gt</a>;</pre>
-<li><strong><a name="item_and_this_question_pops_up_again_on_perlmonks_2007_">And this question pops up again on perlmonks 2007-08-16:</a></strong>
+</li>
+<li><strong><a name="and_this_question_pops_up_again_on_perlmonks_2007_08_16" class="item">And this question pops up again on perlmonks 2007-08-16:</a></strong>
 
 <pre>
   L&lt;<a href="http://perlmonks.org/?node_id=632838&gt">http://perlmonks.org/?node_id=632838&gt</a>;</pre>
+</li>
 </ul>
 <p>
 </p>
 <h2><a name="as_end_of_line">As end of line</a></h2>
 <p>I'm trying to parse a text line by line using Parse::RecDescent. Each
-line is terminated by a ``\n''.</p>
+line is terminated by a &quot;\n&quot;.</p>
 <p>Although the task setting up a grammar for this case is straightforward
 the following program doesn't
 produce any results.</p>
@@ -705,7 +706,7 @@ produce any results.</p>
 <p>RecDescent doesn't recognize the newlines. Does anybody know what I'm
 getting wrong?</p>
 <ul>
-<li><strong>Answer by Damian</strong>
+<li><strong><a name="answer_by_damian2" class="item">Answer by Damian</a></strong>
 
 <p>By default, P::RD skips all whitespace (*including* newlines) before
 tokens.</p>
@@ -719,7 +720,7 @@ tokens.</p>
 </ul>
 <p>
 </p>
-<h3><a name="example_in_a_linedelimited_grammar">Example In a line-delimited grammar</a></h3>
+<h3><a name="example_in_a_line_delimited_grammar">Example In a line-delimited grammar</a></h3>
 <pre>
  I want to use Parse::RecDescent to parse a certain assembly language. In assembly, data is &quot;line oriented&quot;, that is newline is the statement separator. Simplified demonstration:
  
@@ -736,7 +737,7 @@ tokens.</p>
  
  line -&gt; command arg &quot;\n&quot;</pre>
 <ul>
-<li><strong><a name="item_answer_by_damian_3a">Answer by Damian:</a></strong>
+<li><strong><a name="answer_by_damian3" class="item">Answer by Damian:</a></strong>
 
 <pre>
  &lt;skip&gt; tells RecDescent what to skip before trying each 
@@ -760,24 +761,25 @@ tokens.</p>
       args  :  /\d+/ | alphanum 
   
       alphanum :  /[A-Za-z0-9/</pre>
+</li>
 </ul>
 <p>
 </p>
 <hr />
-<h1><a name="columnoriented_processing">COLUMN-ORIENTED PROCESSING</a></h1>
+<h1><a name="column_oriented_processing">COLUMN-ORIENTED PROCESSING</a></h1>
 <p>
 </p>
 <h2><a name="whitespace__text__column_n__period__number__some_reference_to_lookahead_">Whitespace, text, column N, period, number (some reference to lookahead)</a></h2>
 <p>Ok, now the line I'm trying to deal with is:</p>
-<p>``some amount of
+<p>&quot;some amount of
 whitespace,
 then some text, then starting at column 48 a number, followed by a
 period,
-followed by another number''.  I want to capture the text (the
-``title''),
+followed by another number&quot;.  I want to capture the text (the
+&quot;title&quot;),
 and the two numbers (major and minor versions)</p>
 <ul>
-<li><strong><a name="item_answer_by_damian_conway">Answer by Damian Conway</a></strong>
+<li><strong><a name="answer_by_damian_conway" class="item">Answer by Damian Conway</a></strong>
 
 <p>You really do want to use a regex here (to get the
 lookahead/backtracking that RecDescent doesn't do).</p>
@@ -797,12 +799,12 @@ lookahead/backtracking that RecDescent doesn't do).</p>
 <p>
 </p>
 <h2><a name="another_example">Another example</a></h2>
-<p>I'm parsing some lines where the ``column formatting'' is fixed, i.e. a
-particular line might be formally described as ``a single word followed by
+<p>I'm parsing some lines where the &quot;column formatting&quot; is fixed, i.e. a
+particular line might be formally described as &quot;a single word followed by
 some amount of whitespace followed by another word whose first character
-begins at column 22''.</p>
+begins at column 22&quot;.</p>
 <ul>
-<li><strong><a name="item_a_simple_answer_that_is_wrong_3a">A simple answer that is wrong:</a></strong>
+<li><strong><a name="a_simple_answer_that_is_wrong" class="item">A simple answer that is wrong:</a></strong>
 
 <p>Hmm, I guess I could make this simpler and do this:</p>
 <p>line: word &lt;reject: $thiscolumn != 22&gt; word
@@ -816,7 +818,7 @@ word: /\S+/</p>
 <pre>
         line: word '' &lt;reject: $thiscolumn != 22&gt; word</pre>
 </li>
-<li><strong><a name="item_restating_it_in_the_positive_can_be_a_gotcha_3a">Restating it in the positive can be a GOTCHA:</a></strong>
+<li><strong><a name="restating_it_in_the_positive_can_be_a_gotcha" class="item">Restating it in the positive can be a GOTCHA:</a></strong>
 
 <p>I'd state that in the positive instead:</p>
 <pre>
@@ -860,8 +862,8 @@ for even more nosebleed parsing examples.</p>
 future-matching is done as a function of the current matching.</p>
 <p>
 </p>
-<h2><a name="rulebuilding_by_interpolating_an_array_of_choices">Rule-building by interpolating an array of choices</a></h2>
-<p>Let's say you had to parse phrases like ``6 red balls''. You see this as
+<h2><a name="rule_building_by_interpolating_an_array_of_choices">Rule-building by interpolating an array of choices</a></h2>
+<p>Let's say you had to parse phrases like &quot;6 red balls&quot;. You see this as
 <code>&quot;$quantity $color $item&quot;</code>. Now, the colors which are acceptable for
 parsing vary from program to program and so the rule which matches the
 colors needs to be variable.</p>
@@ -871,7 +873,7 @@ colors needs to be variable.</p>
 </p>
 <h2><a name="macro_processing">Macro processing</a></h2>
 <p>In a RecDescent grammar, I'd like to add support in my language for
-``macros''.  These macros would be very much like #define macros in C
+&quot;macros&quot;.  These macros would be very much like #define macros in C
 and would support arguments that are instantiated into the
 expansion. In C, this looks something like:</p>
 <pre>
@@ -879,16 +881,16 @@ expansion. In C, this looks something like:</p>
 <p>In my language, I'd like something like:</p>
 <pre>
  myMacro(x,y):        any_expression</pre>
-<p>where ``any_expression'' is any old (deep) expression defined elsewhere
+<p>where &quot;any_expression&quot; is any old (deep) expression defined elsewhere
 in the grammar, and <code>(x,y)</code> would be replaced/instantiated in that
 expression.  
 This may seem straighforward, but, well, it ain't to me. (I am, after
-all, mush4brains.)  In my P::RD grammar, the ``macro'' rule without
+all, mush4brains.)  In my P::RD grammar, the &quot;macro&quot; rule without
 arguments would look like:</p>
 <pre>
  macro:         identifier ':' expr</pre>
 <p>where, again, expr is defined fully in the grammar. Adding arguments
-to this... I need to instantiate my <code>(x,y)</code> into the ``expr'' string
+to this... I need to instantiate my <code>(x,y)</code> into the &quot;expr&quot; string
 before the subrules interpret it.  
 Now... I thought of using standard Perl substitution in a pre-scan,
 but this seems less-than-ideal, since it requires some knowledge of
@@ -896,10 +898,11 @@ the grammar in the Perl REs. I thought of using two separate grammars,
 the first of which is a simplified version of the full second grammar,
 but this also seems a bit redundant.</p>
 <ul>
-<li><strong><a name="item_and_the_answer_is_2e_2e_2e">And the answer is...</a></strong>
+<li><strong><a name="and_the_answer_is" class="item">And the answer is...</a></strong>
 
 <pre>
  <a href="http://perlmonks.org/index.pl?node_id=176399">http://perlmonks.org/index.pl?node_id=176399</a></pre>
+</li>
 </ul>
 <p>
 </p>
@@ -914,7 +917,7 @@ within a startcode block of my grammar before the
 first rule get overwritten by the other corresponding
 parser.</p>
 <ul>
-<li><strong><a name="item_answer_by_yves_orton">Answer by Yves Orton</a></strong>
+<li><strong><a name="answer_by_yves_orton2" class="item">Answer by Yves Orton</a></strong>
 
 <p>Heres the required patch</p>
 <pre>
@@ -949,7 +952,7 @@ re-walks with random weightings to create new sentences.</p>
 parsers. The grammar for the second parser has to call the first parser.</p>
 <p>Can I do this?</p>
 <ul>
-<li><strong><a name="item_yes_2c_here_27s_an_example">yes, here's an example</a></strong>
+<li><strong><a name="yes_here_s_an_example" class="item">yes, here's an example</a></strong>
 
 <pre>
  
@@ -982,6 +985,7 @@ parsers. The grammar for the second parser has to call the first parser.</p>
  [...]
  
  }</pre>
+</li>
 </ul>
 <p>
 </p>
@@ -997,7 +1001,7 @@ everything is ok.</p>
 the structure. I can only decide if a string is grammatically correct
 or not.</p>
 <ul>
-<li><strong><a name="item_answer_by_marcel_grunaer">Answer by Marcel Grunaer</a></strong>
+<li><strong><a name="answer_by_marcel_grunaer" class="item">Answer by Marcel Grunaer</a></strong>
 
 <p>Try this grammar, which you have to feed the input as one big
 string. It uses a global variable, $::res into which the results
@@ -1069,7 +1073,7 @@ which is XOR (^) not OR (|). So far I used the &lt;reject&gt;
 directive to simulate such a behaviour.</p>
 <p>Is there any easy solution to this?</p>
 <ul>
-<li><strong><a name="item_answer_by_randal_schwartz">Answer by Randal Schwartz</a></strong>
+<li><strong><a name="answer_by_randal_schwartz" class="item">Answer by Randal Schwartz</a></strong>
 
 <p>Use a set.</p>
 <pre>
@@ -1110,7 +1114,7 @@ directive to simulate such a behaviour.</p>
  three one two one =&gt;
    $VAR1 = undef;</pre>
 </li>
-<li><strong><a name="item_embellishment_by_damian_conway">Embellishment by Damian Conway</a></strong>
+<li><strong><a name="embellishment_by_damian_conway" class="item">Embellishment by Damian Conway</a></strong>
 
 <p>Furthermore, if uniqueness was something you needed to enforce more
 widely
@@ -1147,10 +1151,10 @@ one&quot;) {
 <h1><a name="cleaning_up_your_grammars">CLEANING UP YOUR GRAMMARS</a></h1>
 <p>In honor of the original (and greatest) Perl book on cleaning up your
 Perl code, this section is written in the style of 
-Joseph Hall's ``Effective Perl Programming''</p>
+Joseph Hall's &quot;Effective Perl Programming&quot;</p>
 <p>
 </p>
-<h2><a name="use_repetition_modifiers_with_a_separator_pattern_to_match_csvlike_data">Use repetition modifiers with a separator pattern to match
+<h2><a name="use_repetition_modifiers_with_a_separator_pattern_to_match_csv_like_data">Use repetition modifiers with a separator pattern to match
 CSV-like data</a></h2>
 <p>The intuitive way to match CSV data is this:</p>
 <pre>
@@ -1159,8 +1163,8 @@ CSV-like data</a></h2>
  NonFinalToken: 
       QuotedText Comma
       { $return = $item[1] }</pre>
-<p>or, in other (merlyn's) words, ``many comma terminated items followed by
-one standalone item''.</p>
+<p>or, in other (merlyn's) words, &quot;many comma terminated items followed by
+one standalone item&quot;.</p>
 <p>Instead, take the approach shown by merlyn:</p>
 <pre>
  CSVLine: QuotedText(s Comma) { use Data::Dumper; Dumper($item[1]) }</pre>
@@ -1202,15 +1206,16 @@ them. The top level description scales without change.</p>
 </p>
 <h2><a name="precompiling_grammars_for_speed_of_execution">Precompiling Grammars for Speed of Execution</a></h2>
 <p>Take a look at Parse::RecDescent's precompilation option under the section
-titled ``Precompiling parsers''.</p>
+titled &quot;Precompiling parsers&quot;.</p>
 <p>
 </p>
 <h2><a name="parse__recdescent_is_slow_on_really_big_files__how_can_i_speed_it_up">Parse::RecDescent is slow on Really Big Files. How can I speed it up?</a></h2>
 <ul>
-<li><strong><a name="item_reduce_the__22depth_22_of_the_grammar_2e_use_fewer">Reduce the ``depth'' of the grammar. Use fewer levels
+<li><strong><a name="reduce_the_depth_of_the_grammar_use_fewer_levels_of_nested_subrules" class="item">Reduce the &quot;depth&quot; of the grammar. Use fewer levels
 of nested subrules.</a></strong>
 
-<li><strong><a name="item_where_possible_2c_use_regex_terminals_instead_of_s">Where possible, use regex terminals instead of subrules.  For 
+</li>
+<li><strong><a name="where_possible_use_regex_terminals_instead_of_subrules_for_example_instead_of" class="item">Where possible, use regex terminals instead of subrules.  For 
 example, instead of:</a></strong>
 
 <pre>
@@ -1222,9 +1227,11 @@ example, instead of:</a></strong>
 <p>write:</p>
 <pre>
                 string: /&quot;([^&quot;\\]|\\[&quot;\\])*&quot;/</pre>
-<li><strong><a name="item_where_possible_2c_use_string_terminals_instead_of_">Where possible, use string terminals instead of regexes.</a></strong>
+</li>
+<li><strong><a name="where_possible_use_string_terminals_instead_of_regexes" class="item">Where possible, use string terminals instead of regexes.</a></strong>
 
-<li><strong><a name="item_use_repetitions_or__3cleftop_3e_2f_3crightop_3e_in">Use repetitions or &lt;leftop&gt;/&lt;rightop&gt; instead of recursion.</a></strong>
+</li>
+<li><strong><a name="use_repetitions_or_leftop_rightop_instead_of_recursion" class="item">Use repetitions or &lt;leftop&gt;/&lt;rightop&gt; instead of recursion.</a></strong>
 
 <p>For example, instead of:</p>
 <pre>
@@ -1238,31 +1245,32 @@ example, instead of:</a></strong>
 <pre>
                 list: '('  elem(s /,/)  ')'</pre>
 </li>
-<li><strong><a name="item_factor_out_common_prefixes_in_a_set_of_alternate_p">Factor out common prefixes in a set of alternate productions.</a></strong>
+<li><strong><a name="factor_out_common_prefixes_in_a_set_of_alternate_productions" class="item">Factor out common prefixes in a set of alternate productions.</a></strong>
 
-<p>For example, instead of:
-</p>
+<p>For example, instead of:</p>
 <pre>
 
                 id: name rank serial_num
                   | name rank hair_colour
                   | name rank shoe_size</pre>
-<p>write:
-</p>
+<p>write:</p>
 <pre>
 
                 id: name rank (serial_num | haircolour | shoe_size)</pre>
 </li>
-<li><strong><a name="item_pre_2dparse_the_input_somehow_to_break_it_into_sma">Pre-parse the input somehow to break it into smaller sections.
+<li><strong><a name="pre_parse_the_input_somehow_to_break_it_into_smaller_sections_parse_each_section_separately" class="item">Pre-parse the input somehow to break it into smaller sections.
 Parse each section separately.</a></strong>
 
-<li><strong><a name="item_grammars">Precompile they grammar. This won't speed up the parsing, but it
+</li>
+<li><strong><a name="grammars" class="item">Precompile they grammar. This won't speed up the parsing, but it
 will speed up the parser construction for big grammars (which
 Really Big Files often require).</a></strong>
 
-<li><strong><a name="item_consider_whether_you_would_be_better_porting_your_">Consider whether you would be better porting your grammar to
+</li>
+<li><strong><a name="consider_whether_you_would_be_better_porting_your_grammar_to_parse_yapp_instead" class="item">Consider whether you would be better porting your grammar to
 Parse::Yapp instead.</a></strong>
 
+</li>
 </ul>
 <p>
 </p>
@@ -1270,7 +1278,7 @@ Parse::Yapp instead.</a></strong>
 <h1><a name="capturing_matches">CAPTURING MATCHES</a></h1>
 <p>
 </p>
-<h2><a name="hey__i_m_getting_back_array_0x355300__instead_of_what_i_set__return_to_">Hey! I'm getting back <code>ARRAY(0x355300)</code> instead of what I set $return to!</a></h2>
+<h2><a name="hey__i_m_getting_back_array_0x355300__instead_of_what_i_set__return_to_">Hey! I'm getting back ARRAY(0x355300) instead of what I set $return to!</a></h2>
 <p>Here's a prime example of when this mistake is made:</p>
 <pre>
  QuotedText: 
@@ -1278,14 +1286,14 @@ Parse::Yapp instead.</a></strong>
        { my $chars = scalar(@item) - 1;  
          $return = join ('', @item[2..$chars]) }</pre>
 <p>This rule is incorrectly written. The author thinks that <code>@item</code> will
-have one <a href="#item_textchar"><code>TextChar</code></a> from position 2 until all <a href="#item_textchar"><code>TextChar</code></a>s are matched.
+have one <a href="#textchar"><code>TextChar</code></a> from position 2 until all <a href="#textchar"><code>TextChar</code></a>s are matched.
 However, the true structure of <code>@item</code> is:</p>
 <dl>
-<dt><strong><a name="item_position_one_3a_the_string_matched_by_rule_doubleq">position one: the string matched by rule DoubleQuote</a></strong>
+<dt><strong><a name="position_one_the_string_matched_by_rule_doublequote" class="item">position one: the string matched by rule DoubleQuote</a></strong></dt>
 
-<dt><strong><a name="item_textchar">position two: array reference representing parse tree for <code>TextChar(s?)</code></a></strong>
+<dt><strong><a name="textchar" class="item">position two: array reference representing parse tree for TextChar(s?)</a></strong></dt>
 
-<dt><strong><a name="item_position_three_3a_the_string_matched_by_rule_doubl">position three: the string matched by rule DoubleQuote</a></strong>
+<dt><strong><a name="position_three_the_string_matched_by_rule_doublequote" class="item">position three: the string matched by rule DoubleQuote</a></strong></dt>
 
 </dl>
 <p>Note that position two is an array reference. So the rule must be
@@ -1299,7 +1307,7 @@ rewritten in this way.</p>
 <h2><a name="getting_text_from_subrule_matches">Getting text from subrule matches</a></h2>
 <p>I can't seem to get the text from my subrule matches...</p>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway2" class="item">Answer by Damian Conway</a></strong>
 
 <p>Your problem is in this rule:</p>
 <pre>
@@ -1328,7 +1336,7 @@ whitespace), but that doesn't seem to have the desired effect.</p>
 sufficient.</p>
 <p>Does anybody know how to trick Parse::RecDescent into doing this?</p>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway3" class="item">Answer by Damian Conway</a></strong>
 
 <p>To turn off whitespace skipping so I can handle it manually, I always use:</p>
 <pre>
@@ -1346,7 +1354,7 @@ sufficient.</p>
 <h2><a name="my_grammar_is_not_returning_any_data_">My grammar is not returning any data!</a></h2>
 <p>What's wrong?!</p>
 <ul>
-<li><strong><a name="item_answer_by_brent_dax_3a">Answer by Brent Dax:</a></strong>
+<li><strong><a name="answer_by_brent_dax" class="item">Answer by Brent Dax:</a></strong>
 
 <p>This is a clue; either something is wrong with your actions or the
 grammar isn't parsing the data correctly. Try adding 
@@ -1400,7 +1408,7 @@ would mess up any code relying on the type of value returned.</p>
 <p>
 </p>
 <h2><a name="do_not_follow__resync__with__reject__to_skip_errors">Do not follow &lt;resync&gt; with &lt;reject&gt; to skip errors</a></h2>
-<p><code>resync</code> is used to allow a rule which would normally fail to ``pass'' so that 
+<p><code>resync</code> is used to allow a rule which would normally fail to &quot;pass&quot; so that 
 parsing can continue. If you add the reject, then it unconditionally fails.</p>
 <p>
 </p>
@@ -1429,7 +1437,7 @@ both documented in the Parse::RecDescent manpage under
 </p>
 <h2><a name="don_t_use____rd_autoaction_to_print_while_you_are_parsing">Don't use $::RD_AUTOACTION to print while you are parsing</a></h2>
 <p>You can't print out your result while you are parsing it, because you
-can't ``unprint'' a backtrack.</p>
+can't &quot;unprint&quot; a backtrack.</p>
 <p>Instead, have the final top-level rule do all the diagnostic printing, or
 alternatively use P::RD's tracing functionality to observe parsing in 
 action.</p>
@@ -1443,7 +1451,7 @@ action.</p>
 <p>See <a href="#commit_in_subrule_which_is_optional_in_rule">Commit in subrule which is optional in rule</a></p>
 <p>
 </p>
-<h2><a name="in_a_nonshell__e_g__cgi__environment">In a non-shell (e.g. CGI) environment</a></h2>
+<h2><a name="in_a_non_shell__e_g__cgi__environment">In a non-shell (e.g. CGI) environment</a></h2>
 <p>I need to parse a file with a parser that I cooked up from
 Parse::Recdescent. 
 My problem, it must work in a cgi environment and the script must be
@@ -1452,7 +1460,7 @@ the errors msgs from Parse::Recdescent seem unstoppable.</p>
 <p>I can catch them only by redirecting the script's STDERR from the
 shell. But howdo I catch them from within ??</p>
 <ul>
-<li><strong><a name="item_like_this_3a">Like this:</a></strong>
+<li><strong><a name="like_this" class="item">Like this:</a></strong>
 
 <pre>
         use Parse::RecDescent;
@@ -1460,6 +1468,7 @@ shell. But howdo I catch them from within ??</p>
                 or die &quot;Can't redirect errors to file 'errfile'&quot;;</pre>
 <pre>
         # your program here</pre>
+</li>
 </ul>
 <p>
 </p>
@@ -1476,7 +1485,7 @@ would like to capture the line number and error message returned and
 position the viewer (a text widget) to that line, highlighted.  And no
 STDOUT message.</p>
 <p>Something kind of like the eval function where the return value is the
-result but $@ is set as a ``side effect''.</p>
+result but $@ is set as a &quot;side effect&quot;.</p>
 <p>Am I missing something about the built in capability?  Is the solution
 as simple as overloading the Parse::RecDescent::_error subroutine with
 my own copy which might look like this:</p>
@@ -1485,7 +1494,7 @@ my own copy which might look like this:</p>
 sub Parse::RecDescent::_error($;$)
 {
 	$ERRORS++;
-	return 0 if ! _verbosity(``ERRORS'');
+	return 0 if ! _verbosity(&quot;ERRORS&quot;);
 	%Parse::RecDescent::ERROR=('line'=&gt;$_[1],'msg'=&gt;$_[0]);
 	return 1;
 }</p>
@@ -1494,11 +1503,11 @@ an
 extremely complex bit of code and I'm concerned about unforseen
 consequences.</p>
 <p>Of course, I could make ERROR a my variable and provide a method to
-access it so it is not a ``global'', and this would be OO code of a
+access it so it is not a &quot;global&quot;, and this would be OO code of a
 higher
 purity (or something), but that is not really the point.</p>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway4" class="item">Answer by Damian Conway</a></strong>
 
 <p>You can get access to the error data by referring to the attribute
 <code>$thisparser-</code>{errors}&gt; within a rule.</p>
@@ -1548,9 +1557,9 @@ process them later.</p>
 <p>I don't think Parse::RecDescent has a hook for that (Damian, something
 for the todo list?), but you can always install a $SIG {__WARN__}
 handler and process the generated warnings.</p>
-<p>2) In case if user types ``attack bastards'' I want to give him
-error message that ``list of numbers expected'' instead
-of just saying the ``cannot parse this line''. The only
+<p>2) In case if user types &quot;attack bastards&quot; I want to give him
+error message that &quot;list of numbers expected&quot; instead
+of just saying the &quot;cannot parse this line&quot;. The only
 thing that I came up with now was defining every command
 like this:
  Command:Attack
@@ -1559,18 +1568,19 @@ like this:
  ...
 Any better solutions?</p>
 <ul>
-<li><strong><a name="item_you_can_just_do_3a">You can just do:</a></strong>
+<li><strong><a name="you_can_just_do" class="item">You can just do:</a></strong>
 
 <pre>
     Command:   '#atlantis' &lt;commit&gt; FactionID String
        |   'attack' &lt;commit&gt; Number(s)
        |   &lt;error&gt;</pre>
-<p>and when you try to parse ``attack bastards'', you will get:</p>
+<p>and when you try to parse &quot;attack bastards&quot;, you will get:</p>
 <pre>
     ERROR (line 1): Invalid Command: Was expecting Number but found
         &quot;bastards&quot; instead</pre>
 <p>You might want to use &lt;error?&gt;, which will only print the error when
 it saw '#atlantis' or 'attack' (because then you are committed).</p>
+</li>
 </ul>
 <p>
 </p>
@@ -1578,9 +1588,9 @@ it saw '#atlantis' or 'attack' (because then you are committed).</p>
 <p>Is there a way to to collect the parser-generated errors and use them later 
 on in my script?</p>
 <ul>
-<li><strong>Answer by Damian</strong>
+<li><strong><a name="answer_by_damian4" class="item">Answer by Damian</a></strong>
 
-<p>There's no ``official'' way (yet). A future release will allow you
+<p>There's no &quot;official&quot; way (yet). A future release will allow you
 to create pluggable OO error handlers. At the moment the best 
 you can do is:</p>
 <pre>
@@ -1622,7 +1632,7 @@ skip over the /\s*+\n\s*/ sequence.  It seems like skip or resync
 should do this for me, but if so, I haven't discovered the
 correct technique, yet.</p>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway5" class="item">Answer by Damian Conway</a></strong>
 
 <pre>
  use Parse::RecDescent;
@@ -1662,18 +1672,19 @@ correct technique, yet.</p>
  comment:
         '*'  /.*/
                 { {comment =&gt; $item[-1]} }</pre>
+</li>
 </ul>
 <p>
 </p>
 <h2><a name="how_can_i_match_parenthetical_expressions_to_arbitrary_depth">How can I match parenthetical expressions to arbitrary depth?</a></h2>
 <p>Example: a, (b ,c, (e,f , [h, i], j) )</p>
 <ul>
-<li><strong><a name="item_answer_by_faq_author">Answer by FAQ author</a></strong>
+<li><strong><a name="answer_by_faq_author" class="item">Answer by FAQ author</a></strong>
 
 <p>Maybe Text::Balanced is enough for your needs. See it on search.CPAN.org
 under author id DCONWAY.</p>
 </li>
-<li><strong><a name="item_answer_by_lhoward_of_perlmonks_2eorg_3a">Answer by lhoward of perlmonks.org:</a></strong>
+<li><strong><a name="answer_by_lhoward_of_perlmonks_org" class="item">Answer by lhoward of perlmonks.org:</a></strong>
 
 <p>Parse::RecDescent implements a full-featured recursive-descent
 parser. A real parser (as opposed to parsing a string with a regular
@@ -1714,12 +1725,12 @@ rough.</p>
 </ul>
 <p>
 </p>
-<h2><a name="switching_out_of_firstmatchwins_mode">Switching out of first-match-wins mode</a></h2>
+<h2><a name="switching_out_of_first_match_wins_mode">Switching out of first-match-wins mode</a></h2>
 <p>I have a set of alternatives on which I want to avoid the
 default first-match-wins behavior of Parse::RecDescent. How do I do
 it?</p>
 <ul>
-<li><strong>Answer by FAQ author</strong>
+<li><strong><a name="answer_by_faq_author2" class="item">Answer by FAQ author</a></strong>
 
 <p>Use a scored grammar. For example, this scoring directive</p>
 <pre>
@@ -1728,13 +1739,13 @@ it?</p>
  opcode: /$match_text3/  &lt;score: { length join '' @item}&gt;</pre>
 <p>would return the opcode with the longest length, as opposed to which
 one matched first.</p>
-<p>Just look for the section ``Scored productions'' in the .pod
+<p>Just look for the section &quot;Scored productions&quot; in the .pod
 documentation.</p>
 </li>
 </ul>
 <p>
 </p>
-<h2><a name="i_m_having_problems_with_the_intertoken_separator_">I'm having problems with the inter-token separator:</a></h2>
+<h2><a name="i_m_having_problems_with_the_inter_token_separator_">I'm having problems with the inter-token separator:</a></h2>
 <pre>
  my $parse = Parse::RecDescent-&gt;new(&lt;&lt;'EndGrammar');</pre>
 <pre>
@@ -1767,11 +1778,11 @@ separator from</p>
  /\s*/</pre>
 <p>Yet it did not gobble up the white space between the '[' terminal and the &lt;skip:''&gt;'%' file production</p>
 <ul>
-<li><strong>Answer by Randal Schwartz</strong>
+<li><strong><a name="answer_by_randal_schwartz2" class="item">Answer by Randal Schwartz</a></strong>
 
 <p>That's the expected behavior. The outer prefix is in effect until
 changed, but you changed it early in the rule, so the previous
-``whitespace skip'' is effectively gone by the time you hunt for '%'.</p>
+&quot;whitespace skip&quot; is effectively gone by the time you hunt for '%'.</p>
 <p>To get what you want, you want:</p>
 <pre>
  '%' &lt;skip:''&gt; file</pre>
@@ -1784,14 +1795,13 @@ back</p>
 <h2><a name="matching_blank_lines">Matching blank lines</a></h2>
 <p>How do I match an arbitrary number of blank lines in Parse::RecDescent?</p>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway6" class="item">Answer by Damian Conway</a></strong>
 
-<p>Unless you use the /m suffix, the trailing $ means ``end of string'', 
-not ``end of line''. You want:</p>
+<p>Unless you use the /m suffix, the trailing $ means &quot;end of string&quot;, 
+not &quot;end of line&quot;. You want:</p>
 <pre>
    blank_line:  /^\s+?$/m</pre>
-<p>or 
-</p>
+<p>or</p>
 <pre>
 
    blank_line:  /^\s+?\n/</pre>
@@ -1803,9 +1813,9 @@ not ``end of line''. You want:</p>
    
           parses with no error.</pre>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway7" class="item">Answer by Damian Conway</a></strong>
 
-<p>The pattern match still fails, but returns the empty string (``'').
+<p>The pattern match still fails, but returns the empty string (&quot;&quot;).
 Since that's not undef, the rule matches (even though it doesn't
 do what you want).</p>
 </li>
@@ -1834,7 +1844,7 @@ do what you want).</p>
  Why does '@' have to be escaped? And whatever reason
  that may be, why doesnt it apply to '\n'?</pre>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway8" class="item">Answer by Damian Conway</a></strong>
 
 <p>Because you're using an interpolating here document. You almost certainly 
 want this instead:</p>
@@ -1859,12 +1869,11 @@ want this instead:</p>
 <h2><a name="other_modules_appear_to_not_work_when_used_with_p__rd">Other modules appear to not work when used with P::RD</a></h2>
 <p>Such-and-such a module works fine when I don't use Parse::RecDescent</p>
 <ul>
-<li><strong>Answer by Damian Conway</strong>
+<li><strong><a name="answer_by_damian_conway9" class="item">Answer by Damian Conway</a></strong>
 
 <pre>
  Did you alter the value of undef with your parser code?</pre>
-<p>The problem has nothing to do with  Parse::RecDescent.
-</p>
+<p>The problem has nothing to do with  Parse::RecDescent.</p>
 <pre>
 
 Rather, it was caused by your having set $/ to undef, which seems to
@@ -1879,6 +1888,7 @@ change things like this:</p>
           {
           local $/;
           }</pre>
+</li>
 </ul>
 <p>
 </p>
@@ -1893,7 +1903,7 @@ Check out this link:</p>
 <p>for some approaches to this problems.</p>
 <p>
 </p>
-<h2><a name="double_vs_singlequoted_strings">Double vs Single-quoted strings</a></h2>
+<h2><a name="double_vs_single_quoted_strings">Double vs Single-quoted strings</a></h2>
 <p>I'm playing around with the &lt;skip:&gt; directive and I've noticed
 something interesting that I can't explain to myself.</p>
 <p>Here is my script:</p>
@@ -1909,7 +1919,7 @@ brackets around the escaped dot:</p>
 <p>the grammar starts working again:</p>
 <p>How does this work this way?</p>
 <ul>
-<li><strong><a name="item_damian_says_3a">Damian says:</a></strong>
+<li><strong><a name="damian_says" class="item">Damian says:</a></strong>
 
 <p>This small test program may help you figure out what's going wrong:</p>
 <pre>
@@ -1964,7 +1974,7 @@ easier. Did I miss something?</p>
 <p>If not, is there a way to make this available in every parser,
 e.g. by providing a new directive or something like that?</p>
 <ul>
-<li><strong><a name="item_the_answer_is_on_cpan">The answer is on CPAN</a></strong>
+<li><strong><a name="the_answer_is_on_cpan" class="item">The answer is on CPAN</a></strong>
 
 <p>Parse::RecDescent::Consumer, on CPAN, prints out the text consumed
 between stages of a parse... even if that part may fail later. The
@@ -1979,8 +1989,9 @@ implementation is straightforward, it creates closures containing
 a production the same regardless of whether P::RD returns a string or a 
 list of string.</p>
 <ul>
-<li><strong><a name="item_use_scalar_3a_3alistify_from_cpan_2e">Use Scalar::Listify from CPAN.</a></strong>
+<li><strong><a name="use_scalar_listify_from_cpan" class="item">Use Scalar::Listify from CPAN.</a></strong>
 
+</li>
 </ul>
 <p>
 </p>
@@ -2185,7 +2196,7 @@ purpose of this. Working from inner to outer:</p>
                              # different from the first array we
                              # dereferenced?</pre>
 <ul>
-<li><strong><a name="item_matthew_wickerline_says">Matthew Wickerline says</a></strong>
+<li><strong><a name="matthew_wickerline_says" class="item">Matthew Wickerline says</a></strong>
 
 <p>The line from demo_calc.pl is in
 fact not doing any deep copying.</p>
@@ -2237,7 +2248,7 @@ around there is one of two things:
 output... it just makes for a tiny bit of wasted work (or maybe Perl is
 smart enough to optimze away the wasted work, I dunno).</p>
 </li>
-<li><strong><a name="item_damian_conway_says_3a">Damian Conway says:</a></strong>
+<li><strong><a name="damian_conway_says" class="item">Damian Conway says:</a></strong>
 
 <p>I have no recollection of why I did this (see children, that's
 why you should *always* comment your code!).</p>
@@ -2249,7 +2260,7 @@ be changed.</p>
 copying the array referenced in $_[0] without declaring a new
 variable. So another possible explanation is that evalop may
 originally have been a one-liner, in which case I might have
-used this ``inlined copy'' to keep the subroutine's body to a
+used this &quot;inlined copy&quot; to keep the subroutine's body to a
 single expression.</p>
 <p>However...</p>
 <pre>
@@ -2272,10 +2283,11 @@ For instance, so:</p>
 <p>yields <code>banan</code>. How can I get it to yield
 <code>ban</code>?</p>
 <ul>
-<li><strong><a name="item_just_use_the_non_2dgreedy_quantifier_modifier_2c__">Just use the non-greedy quantifier modifier, <code>?</code> :</a></strong>
+<li><strong><a name="just_use_the_non_greedy_quantifier_modifier" class="item">Just use the non-greedy quantifier modifier, <code>?</code> :</a></strong>
 
 <pre>
     $a =~ /b.*?n/;</pre>
+</li>
 </ul>
 <p>
 </p>
@@ -2291,7 +2303,7 @@ regexps:</a></h3>
   <a href="http://japhy.perlmonk.org/book">http://japhy.perlmonk.org/book</a></pre>
 <p>
 </p>
-<h3><a name="mastering_regular_expressions_by_jeffrey_freidl">``Mastering Regular Expressions'' by Jeffrey Freidl</a></h3>
+<h3><a name="mastering_regular_expressions_by_jeffrey_freidl">&quot;Mastering Regular Expressions&quot; by Jeffrey Freidl</a></h3>
 <p>You still need to know when to use <code>/.*/</code> or <code>/.+/</code> or <code>/[^x]*/</code></p>
 <p>
 </p>
@@ -2303,7 +2315,7 @@ them. But it is important that you have rapid access to them instead
 of slogging through Super Search or a google site search, so here you
 go:</p>
 <ul>
-<li><strong><a name="item_pro_teaches_amateur">Pro teaches amateur</a></strong>
+<li><strong><a name="pro_teaches_amateur" class="item">Pro teaches amateur</a></strong>
 
 <p><a href="http://perlmonks.org/?node_id=674283|http://perlmonks.org/?node_id=674283">http://perlmonks.org/</a></p>
 <p>Perlmonk Ikegami gives a wonderful set of best practices for
@@ -2319,7 +2331,7 @@ Recdescent usage.</p>
 <h2><a name="web_links">Web Links</a></h2>
 <p>
 </p>
-<h3><a name="some_parse__recdescent_tutorials">``Some Parse::RecDescent Tutorials''</a></h3>
+<h3><a name="some_parse__recdescent_tutorials">&quot;Some Parse::RecDescent Tutorials&quot;</a></h3>
 <p><a href="http://perlmonks.org/?node_id=108182">http://perlmonks.org/</a></p>
 <p>
 </p>
@@ -2345,21 +2357,21 @@ we are all about pragmatism!</p>
 <p>
 </p>
 <h3><a name="parse_data__dumper_output">Parse Data::Dumper output</a></h3>
-<p>In the Linux Magazine article ``Safe undumping'' by Randal Schwartz uses
+<p>In the Linux Magazine article &quot;Safe undumping&quot; by Randal Schwartz uses
 Parse::RecDescent to parse Data::Dumper output. Not fast, but quite
 complete.</p>
 <p>
 </p>
-<h3><a name="parsing_interesting_things">``Parsing Interesting Things''</a></h3>
+<h3><a name="parsing_interesting_things">&quot;Parsing Interesting Things&quot;</a></h3>
 <p>SysAdminMag.COM, December 2001, Randal Schwartz</p>
 <p>
 </p>
-<h3><a name="data_munging_with_perl_by_dave_cross">``Data Munging with Perl'' by Dave Cross</a></h3>
+<h3><a name="data_munging_with_perl_by_dave_cross">&quot;Data Munging with Perl&quot; by Dave Cross</a></h3>
 <p>Chapter 11 is focused on parsing with special emphasis on practical use of
 Parse::RecDescent.</p>
 <p>
 </p>
-<h3><a name="objectoriented_perl_by_damian_conway">``Object-Oriented Perl'' by Damian Conway</a></h3>
+<h3><a name="object_oriented_perl_by_damian_conway">&quot;Object-Oriented Perl&quot; by Damian Conway</a></h3>
 <p>This book will aid you in complexity management for large grammars.</p>
 <p>
 </p>
@@ -2425,8 +2437,8 @@ from my parse:</p>
                     )
            )
     );</pre>
-<p>The pattern is basically saying: ``match an array ref consisting of 2
-elements where each element is not an reference of any sort''. Since
+<p>The pattern is basically saying: &quot;match an array ref consisting of 2
+elements where each element is not an reference of any sort&quot;. Since
 the strings 'city' and 'taipei' both fulfill that criterion that is
 what matches.</p>
 <p>
@@ -2457,7 +2469,7 @@ regular expression.</p>
 </p>
 <h3><a name="text__balanced_and_regexp__common__balanced">Text::Balanced  and Regexp::Common::balanced</a></h3>
 <p>Use this instead of writing hairy regular expressions to match certain
-common ``balanced'' forms of text, such as tags and parenthesized text.</p>
+common &quot;balanced&quot; forms of text, such as tags and parenthesized text.</p>
 <p>See <a href="http://perlmonks.org/index.pl?node_id=208285">http://perlmonks.org/index.pl?node_id=208285</a>
 for an example of where it would be better suited for the task than
 Parse::RecDescent.</p>
@@ -2472,10 +2484,10 @@ the same. <a href="/Scalar/Listify.html">Scalar::Listify</a> facilitates this pr
 <h2><a name="practical_parser_examples">Practical Parser Examples</a></h2>
 <p>
 </p>
-<h3><a name="dbfeeder___data__generate__database_test_data_generation_tool">DBFeeder / Data::Generate - database test data generation tool</a></h3>
+<h3><a name="dbfeeder___data__generate___database_test_data_generation_tool">DBFeeder / Data::Generate - database test data generation tool</a></h3>
 <p><a href="http://dbfeeder.sourceforge.net/|http://dbfeeder.sourceforge.net/">http://dbfeeder.sourceforge.net/|http://dbfeeder.sourceforge.net/</a>
 is a a powerful data generation tool. Internally, it uses
-<a href="/Data/Generate.html">Data::Generate</a> to parse ``inverted regular expressions'' 
+<a href="/Data/Generate.html">Data::Generate</a> to parse &quot;inverted regular expressions&quot; 
 using Parse::RecDescent.</p>
 <p>
 </p>
@@ -2488,8 +2500,8 @@ a part of DBFeeder and Data::Generate, but an avenue he is exploring.</p>
 <p>
 </p>
 <h3><a name="article_comparing_gene_parsing_with_prd_and_other_approaches">Article comparing Gene Parsing with PRD and other approaches</a></h3>
-<p>``The Making of Entrez Gene parsers in Perl using
-Parse::RecDescent, Parse::Yapp, Perl-byacc and Regex'' by
+<p>&quot;The Making of Entrez Gene parsers in Perl using
+Parse::RecDescent, Parse::Yapp, Perl-byacc and Regex&quot; by
 Dr. Mingyi Liu</p>
 <p>is available from:</p>
 <p><a href="http://sourceforge.net/docman/display_doc.php?docid=27420&group_id=133629">http://sourceforge.net/docman/display_doc.php</a></p>
@@ -2517,16 +2529,16 @@ logic, e.g.:</p>
              ]</pre>
 <p>The neat thing about the solution is that after coding it, Marc had
 PRD generate a parser that ran independantly from PRD itself.</p>
-<p>This solution, according to the judge, ``... is
+<p>This solution, according to the judge, &quot;... is
 probably the best solution to use if full expression parsing is
-desired for Module::Build.''</p>
+desired for Module::Build.&quot;</p>
 <p>Marc's outline of his solution and link to full code is available
 here:</p>
 <pre>
         <a href="http://perl.plover.com/~alias/list.cgi?1:mss:2279:homdmfmmaelddeehiooi">http://perl.plover.com/~alias/list.cgi?1:mss:2279:homdmfmmaelddeehiooi</a></pre>
 <p>
 </p>
-<h3><a name="xsh__the_xml_editing_shell">XSH - The XML Editing Shell</a></h3>
+<h3><a name="xsh___the_xml_editing_shell">XSH - The XML Editing Shell</a></h3>
 <p>XSH:</p>
 <p><a href="http://xsh.sourceforge.net/">http://xsh.sourceforge.net/</a></p>
 <p>uses Parse::RecDescent</p>
@@ -2568,11 +2580,11 @@ have used Lex and Yacc. Parse::RecDescent is a top-down parser.</p>
 <p><a href="/Perl6/Rules.html">the Perl6::Rules manpage</a></p>
 <p>
 </p>
-<h3><a name="perlbyacc">perl-byacc</a></h3>
+<h3><a name="perl_byacc">perl-byacc</a></h3>
 <p><a href="http://www.instantweb.com/D/dictionary/foldoc.cgi?perl-byacc">http://www.instantweb.com/D/dictionary/foldoc.cgi</a></p>
 <p>
 </p>
-<h3><a name="domainspecific_parsers">Domain-specific parsers</a></h3>
+<h3><a name="domain_specific_parsers">Domain-specific parsers</a></h3>
 <p>On CPAN there are many parsers for particular tasks such as CSV, HTML,
 XML, etc.</p>
 <p>
@@ -2592,26 +2604,36 @@ prd.</p>
 <a href="http://www.metaperl.org">http://www.metaperl.org</a></p>
 <p>The (unwitting) contributors to this FAQ</p>
 <ul>
-<li><strong><a name="item_chas_owens">Chas Owens</a></strong>
+<li><strong><a name="chas_owens" class="item">Chas Owens</a></strong>
 
-<li><strong><a name="item_brent_dax">Brent Dax</a></strong>
+</li>
+<li><strong><a name="brent_dax" class="item">Brent Dax</a></strong>
 
-<li><strong><a name="item_damian_conway">Damian Conway</a></strong>
+</li>
+<li><strong><a name="damian_conway" class="item">Damian Conway</a></strong>
 
-<li><strong><a name="item_gwynn_judd">Gwynn Judd</a></strong>
+</li>
+<li><strong><a name="gwynn_judd" class="item">Gwynn Judd</a></strong>
 
-<li><strong><a name="item_lhoward_of_perlmonks">lhoward of Perlmonks</a></strong>
+</li>
+<li><strong><a name="lhoward_of_perlmonks" class="item">lhoward of Perlmonks</a></strong>
 
-<li><strong><a name="item_marcel_grunaer">Marcel Grunaer</a></strong>
+</li>
+<li><strong><a name="marcel_grunaer" class="item">Marcel Grunaer</a></strong>
 
-<li><strong><a name="item_matthew_wickline">Matthew Wickline</a></strong>
+</li>
+<li><strong><a name="matthew_wickline" class="item">Matthew Wickline</a></strong>
 
-<li><strong><a name="item_schwartz">Randal L. Schwartz (merlyn), Perl hacker</a></strong>
+</li>
+<li><strong><a name="schwartz" class="item">Randal L. Schwartz (merlyn), Perl hacker</a></strong>
 
-<li><strong><a name="item_stefan_mueller">Stefan Mueller</a></strong>
+</li>
+<li><strong><a name="stefan_mueller" class="item">Stefan Mueller</a></strong>
 
-<li><strong><a name="item_yves_orton">Yves Orton</a></strong>
+</li>
+<li><strong><a name="yves_orton" class="item">Yves Orton</a></strong>
 
+</li>
 </ul>
 <p>
 </p>
@@ -2620,26 +2642,27 @@ prd.</p>
 If you can think of another source that is not listed below, I would
 appreciate knowing about it.</p>
 <ul>
-<li><strong><a name="item_comp_2elang_2eperl_2emodules">comp.lang.perl.modules</a></strong>
+<li><strong><a name="comp_lang_perl_modules" class="item">comp.lang.perl.modules</a></strong>
 
-<li><strong><a name="item_comp_2elang_2eperl_2emoderated">comp.lang.perl.moderated</a></strong>
+</li>
+<li><strong><a name="comp_lang_perl_moderated" class="item">comp.lang.perl.moderated</a></strong>
 
-<li><strong><a name="item_recdescent_40perl_2eorg"><a href="mailto:recdescent@perl.org">recdescent@perl.org</a></a></strong>
+</li>
+<li><strong><a name="recdescent_perl_org" class="item"><a href="mailto:recdescent@perl.org">recdescent@perl.org</a></a></strong>
 
 <p>Conveniently available via NNTP at:</p>
 <pre>
      <a href="news://nntp.perl.org/perl.recdescent">news://nntp.perl.org/perl.recdescent</a></pre>
 </li>
-<li><strong><a name="item_perlmonks_2eorg">perlmonks.org</a></strong>
+<li><strong><a name="perlmonks_org" class="item">perlmonks.org</a></strong>
 
+</li>
 </ul>
 <p>
 </p>
 <hr />
 <h1><a name="faq_repo">FAQ repo</a></h1>
-<p><a href="http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master">http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master</a>
-
-</p>
+<p><a href="http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master">http://github.com/metaperl/Parse--RecDescent--FAQ/tree/master</a></p>
 
 </body>
 
