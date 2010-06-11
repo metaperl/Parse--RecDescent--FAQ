@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 echo
-echo Changes should be made to FAQ.tt *not* FAQ.pm
+echo Changes should be made to .tt files *not* .pm files
 echo
 
 echo
@@ -10,9 +10,12 @@ echo
 
 # make manifest
 
-./tt.pl FAQ.tt
-mv FAQ.tt-out FAQ.pm
-pod2html FAQ.pm > FAQ.html
+export D=lib/Parse/RecDescent/FAQ
+O=$D/Original
+
+./tt.pl $O.tt
+mv $O.tt-out $O.pod
+
 perl Makefile.PL
 make
 make test
@@ -20,7 +23,7 @@ rm *.tar.gz
 make tardist
 
 
-git commit -a -m "`grep 'VERSION =' FAQ.tt`"
+git commit -a -m "`grep 'VERSION =' $D.pm`"
 git push
 
 upc *.tar.gz

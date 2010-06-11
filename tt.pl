@@ -16,7 +16,9 @@ sub pod_include {
     my ($file, $indent) = @_;
 
     open F, $file or die "couldnt open file : $!";
-    
+
+    $indent ||= 4;
+
     $OUT = '';
 
     my $spaces = " " x $indent;
