@@ -1,5 +1,6 @@
 ChangeLog
 code/consumer.question
+code/dbl-vs-single
 code/escape-perl-symbols.answer
 code/escape-perl-symbols.question
 code/fake-deep.answer
@@ -18,13 +19,17 @@ code/rule-call-parser.answer
 code/scored-grammar.answer
 code/shallow-deep-copy-tutorial.answer
 code/xor-alternation-matching.perl
+EDIT_.tt_files_not_.pm_files_or_you_die
 EDIT_FAQ.tt.DO_NOT_EDIT_FAQ.pm
-FAQ.html
-FAQ.pm
-FAQ.tt
+insert/gotcha/add_action/answer.txt
+insert/gotcha/add_action/question.txt
+lib/Parse/RecDescent/FAQ.pm
+lib/Parse/RecDescent/FAQ/Original.pod
+lib/Parse/RecDescent/FAQ/Original.tt
 Makefile.PL
 MANIFEST
 META.yml			Module meta-data (added by MakeMaker)
+Parse-RecDescent-FAQ-7.0.tar.gz
 pod2htmd.tmp
 pod2htmi.tmp
 release
