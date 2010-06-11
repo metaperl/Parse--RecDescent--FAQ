@@ -3,6 +3,6 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     'NAME'		=> 'Parse::RecDescent::FAQ',
-    'VERSION_FROM'	=> 'FAQ.tt', # finds $VERSION
+    'VERSION_FROM'	=> 'lib/Parse/RecDescent/FAQ.pm', # finds $VERSION
     'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
 );
