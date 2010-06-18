@@ -2,7 +2,7 @@ package Parse::RecDescent::FAQ;
 
 use vars qw($VERSION);
 
-$VERSION = '7.2';
+$VERSION = '7.3';
 
 1;
 

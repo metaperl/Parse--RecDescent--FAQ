@@ -1,4 +1,4 @@
-package Parse::RecDescent::FAQ; 
+package Parse::RecDescent::FAQ::Original; 
 
 use vars qw($VERSION);
 
@@ -11,7 +11,7 @@ __END__
 
 =head1 NAME
 
-Parse::RecDescent::FAQ - the official, authorized FAQ for Parse::RecDescent. 
+Parse::RecDescent::FAQ::Original - the original, official, authorized FAQ for Parse::RecDescent. 
 
 =head1 OVERVIEW-TYPE QUESTIONS
 
