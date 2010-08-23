@@ -28,8 +28,6 @@ lib/Parse/RecDescent/FAQ/Original.tt
 Makefile.PL
 MANIFEST
 META.yml			Module meta-data (added by MakeMaker)
-pod2htmd.tmp
-pod2htmi.tmp
 release
 test.pl
 tt.pl
